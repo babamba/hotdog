@@ -22,7 +22,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		throws Exception {
 		
 		String email = request.getParameter( "email" );
-		String password = request.getParameter( "password" );
+		String password = request.getParameter( "pass_word" );
 		String nickname = request.getParameter("nickname");
 		
 		// Web Application Context 받아오기
@@ -33,8 +33,8 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		UserService userService = ac.getBean( UserService.class );
 		
 		// 데이터베이스에서 해당 UserVo 받아오기 
-		UserVo userVo = userService.login(email, password);
-		
+		UserVo userVo = userService.login(email, password, nickname);
+		System.out.println(userVo);
 		// 이메일과 패쓰워드가 일치하지 않는 경우
 		if( userVo == null ) {
 			System.out.println(userVo);

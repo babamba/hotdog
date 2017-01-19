@@ -1,6 +1,7 @@
 package com.hotdog.www.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,11 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping("/login")
-	public String login(@ModelAttribute UserVo vo, Model model){
+	public String login(@ModelAttribute UserVo vo, Model model, HttpServletRequest request, HttpSession session){
 		System.out.println("login");
+		System.out.println("controller" + request);
+		System.out.println("controller" + session);
+		
 		return "redirect:/";
 	}
 	
@@ -39,7 +43,6 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	
 	@Auth
 	@RequestMapping("/logout")
 	public String logout() {

@@ -51,8 +51,8 @@ public class UserService {
 		return false;
 	}
 	
-	public UserVo login(String email, String password){
-		UserVo authUser = userDao.selectForLogin(email, password);
+	public UserVo login(String email, String pass_word, String nickname){
+		UserVo authUser = userDao.selectForLogin(email, pass_word, nickname);
 		System.out.println("loginService");
 		return authUser;
 	}

@@ -34,10 +34,11 @@ public class UserDao {
 		return authUser;
 	}
 	
-	public UserVo selectForLogin(String email, String password){
+	public UserVo selectForLogin(String email, String pass_word, String nickname){
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("email", email);
-		map.put("password", password);
+		map.put("pass_word", pass_word);
+		map.put("nickname", nickname);
 		UserVo authUser = sqlSession.selectOne("user.selectForLogin",map);
 		System.out.println("UserDao login");
 		return authUser;

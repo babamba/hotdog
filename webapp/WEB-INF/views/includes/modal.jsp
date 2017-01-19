@@ -77,8 +77,8 @@
 	               </div>
 
                    <div class="form-group label-floating">
-                        <label class="control-label">Password</label>
-                        <input type="password" name="password" class="form-control">
+                        <label class="control-label">password</label>
+                        <input type="password" name="pass_word" class="form-control">
                         <c:if test="${param.result eq 'fail'}">
 						<p>로그인이 실패 했습니다.</p>
 					</c:if>

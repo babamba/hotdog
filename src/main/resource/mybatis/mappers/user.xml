@@ -40,7 +40,7 @@
 	
 	<select id="selectForLogin" parameterType="uservo" resultType="uservo">
 		<![CDATA[
-		select users_no, email, pass_word
+		select users_no, email, pass_word, nickname
 			from users
 		where email = #{email} and pass_word = #{pass_word};
 		]]>

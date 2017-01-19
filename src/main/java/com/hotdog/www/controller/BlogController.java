@@ -2,6 +2,8 @@ package com.hotdog.www.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +18,14 @@ public class BlogController {
 	@Autowired
 	private BlogService blogService;
 	
-	@RequestMapping("/{email}")
-	public String main(@PathVariable String email, Model model){
+	@RequestMapping("/{nickname}")
+	public String main(@PathVariable String nickname, Model model){
 		/*Map<String, Object> map = blogService.index(email);
 		System.out.println(map);*/
+		System.out.println();
 		return "blog/blog-main";
 	}
+	
 	
 	@RequestMapping("vod")
 	public String vod(){
