@@ -23,6 +23,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		
 		String email = request.getParameter( "email" );
 		String password = request.getParameter( "password" );
+		String nickname = request.getParameter("nickname");
 		
 		// Web Application Context 받아오기
 		ApplicationContext ac =

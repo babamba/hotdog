@@ -21,7 +21,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/bootstrap.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/templatemo-style.css">
+	href="${pageContext.request.contextPath}/assets/css/main.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/swiper.css">
 

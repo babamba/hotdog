@@ -15,7 +15,7 @@
 	<select id="getNickname" parameterType="string" resultType="uservo">
 		<![CDATA[
 			select nickname as nickName 
-			from users where users_no = #{usersNo};
+			from users where users_no = #{users_no};
 		]]>
 	</select>
 	
@@ -24,7 +24,7 @@
 	
 		<![CDATA[
 			insert into users(email, pass_word, nickname, follower_num, following_num) values
-			(#{email}, #{password}, #{nickName} , 0, 0);
+			(#{email}, #{pass_word}, #{nickname} , 0, 0);
 		]]>
 	</insert>
 
@@ -42,7 +42,7 @@
 		<![CDATA[
 		select users_no, email, pass_word
 			from users
-		where email = #{email} and pass_word = #{password};
+		where email = #{email} and pass_word = #{pass_word};
 		]]>
 	</select>
 	

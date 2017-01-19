@@ -11,13 +11,13 @@ import com.hotdog.www.vo.UserVo;
 @Service
 public class PostService {
 
-/*	@Autowired
+	@Autowired
 	private BlogDao blogDao;
 	
 	@Autowired
-	private UserDao userDao;*/
+	private UserDao userDao;
 	
 	
-
+	
 	
 }

@@ -16,14 +16,14 @@ import com.hotdog.www.vo.UserVo;
 
 @Controller
 public class PostController {
-/*
+
 		@Autowired
 		private PostService postService;
-		*/
+		
 		
 		/*@RequestMapping(value = "/{nickname}/admin/write", method = RequestMethod.GET)
 		public String main(@PathVariable String nickname, @ModelAttribute PostVo postVo, Model model, @AuthUser UserVo authUser){
-			int no = authUser.getUsersNo();
+			int no = authUser.getUsers_no();
 			BlogVo blogVo = postService.getByNickname(nickname); 
 			
 			return "";
