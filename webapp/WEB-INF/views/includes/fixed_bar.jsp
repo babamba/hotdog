@@ -34,6 +34,7 @@
                 <div class="top_button col-sm-0 pull-right">
                         <button class="btn btn-danger" data-toggle="modal" data-target="#info">Info</button>
                         <button class="btn btn-success" data-toggle="modal" data-target="#signIn">sign in</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#easyjoin">easy join test</button>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#accessTerms">join test</button>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#search">Search</button>
                  </div>

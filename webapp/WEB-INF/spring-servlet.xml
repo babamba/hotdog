@@ -29,7 +29,7 @@
 
 		</mvc:message-converters>
 		 <mvc:argument-resolvers>
-			<bean class="com.hotdog.security.AuthUserHandlerMethodArgumentResolver" />
+			<bean class="com.hotdog.petcam.security.AuthUserHandlerMethodArgumentResolver" />
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
 
@@ -40,7 +40,7 @@
 	<mvc:default-servlet-handler />
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.hotdog.*.controller, com.hot.www"/>
+	<context:component-scan base-package="com.hotdog.petcam.controller"/>
 
 	<!-- 기본 뷰 리졸버 -->
 	<bean id="viewResolver"
@@ -69,17 +69,17 @@
  	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/user/login" />
-			<bean class="com.hotdog.security.AuthLoginInterceptor" />
+			<bean class="com.hotdog.petcam.security.AuthLoginInterceptor" />
 		</mvc:interceptor>
 		
 		<mvc:interceptor>
 			<mvc:mapping path="/user/logout" />
-			<bean class="com.hotdog.security.AuthLogoutInterceptor" />
+			<bean class="com.hotdog.petcam.security.AuthLogoutInterceptor" />
 		</mvc:interceptor>
 		
 		<mvc:interceptor>
 			<mvc:mapping path="/user/signupform" />
-			<bean class="com.hotdog.security.AuthSignUpInterceptor" />
+			<bean class="com.hotdog.petcam.security.AuthSignUpInterceptor" />
 		</mvc:interceptor>
 		
 		<mvc:interceptor>
@@ -88,7 +88,7 @@
 			<mvc:exclude-mapping path="/user/logout" />
 			<mvc:exclude-mapping path="/user/signupform" />
 			<mvc:exclude-mapping path="/assets/**" />
-			<bean class="com.hotdog.security.AuthInterceptor" />
+			<bean class="com.hotdog.petcam.security.AuthInterceptor" />
 		</mvc:interceptor>
 
 	</mvc:interceptors>

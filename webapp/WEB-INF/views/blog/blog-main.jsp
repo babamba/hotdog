@@ -17,6 +17,8 @@
 <title>Hot dog</title>
 <head>
 
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery.js"></script>
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/normalize.css">
 <link rel="stylesheet"
@@ -49,7 +51,7 @@
 
 
 <body>
-
+	<h1>${map.postlist }</h1>
 	<!-- Fixed-bar -->
 	<c:import url="/WEB-INF/views/includes/fixed_bar.jsp" />
 
@@ -62,8 +64,7 @@
 	<!-- Modal -->
 	<c:import url="/WEB-INF/views/includes/modal.jsp" />
 
-	<script
-		src="${pageContext.request.contextPath}/assets/js/vendor/jquery-1.10.2.min.js" ></script>
+	<script src="${pageContext.request.contextPath }/assets/js/min/jquery-1.10.2.min.js" type="text/javascript"></script>
 	<script
 		src="${pageContext.request.contextPath}/assets/js/min/bootstrap.min.js"></script>
 	<script
@@ -90,7 +91,7 @@
 		src="${pageContext.request.contextPath}/assets/js/material-kit.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+		src="${pageContext.request.contextPath}/assets/js/min/modernizr-2.6.2.min.js"></script>
 
 
 </body>

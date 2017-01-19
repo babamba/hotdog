@@ -28,11 +28,11 @@
 		]]>
 	</insert>
 
-	<select id ="getByNo" parameterType="long" resultType="uservo">
+	<select id ="getByNo" parameterType="int" resultType="uservo">
 		<![CDATA[
 		select user_no, email, nickname, password, sec_password, info, users_image, follower_num, follower_num
 		  from users
-		 where user_no=#{no }		
+		 where users_no = #{users_no }		
 		]]>
 	</select>
 	
@@ -53,6 +53,17 @@
 		where email = #{email};
 		]]>
 	</select>
+	
+	<select id="nicknameExist" parameterType="string" resultType="uservo">
+		<![CDATA[
+		select users_no 
+			from users 
+		where nickname = #{nickname};
+		]]>
+	</select>
+	
+	
+	
 	
 	
 

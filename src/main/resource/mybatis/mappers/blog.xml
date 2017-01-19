@@ -16,12 +16,12 @@
 		]]>
 	</update> 
 	
-	
-	<select id="get" parameterType="long" resultType="blogvo">
+	<select id="get" parameterType="int" resultType="blogvo">
 		<![CDATA[
-			select * from BLOG where users_no = #{no}
+			select * from BLOG where users_no = #{users_no}
 		]]>
 	</select>
+
 	
 	
 	

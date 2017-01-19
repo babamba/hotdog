@@ -60,6 +60,8 @@
 				</div>
 				<div class="post_content">
 					<p>
+						<p>${PostVo.content}</p>
+					
 						<span>Lorem ipsum dolor sit amet, consectetur adipisicing
 							elit. Architecto perspiciatis quaerat, corporis, corrupti
 							repellat sed fugiat aliquam voluptatum officiis illo eveniet vel

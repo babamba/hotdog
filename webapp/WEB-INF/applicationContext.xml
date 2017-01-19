@@ -19,18 +19,8 @@
 	<aop:aspectj-autoproxy />
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.hotdog.www.Service, com.hotdog.www.Repository">
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Repository" />
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Component" />
-	</context:component-scan>
-
-
  <!-- scanning -->
-     <context:component-scan base-package="com.hotdog.*.repository, com.hotdog.*.service" >
+     <context:component-scan base-package="com.hotdog.petcam.repository, com.hotdog.petcam.service" >
       <context:include-filter type="annotation"
          expression="org.springframework.stereotype.Repository" />
       <context:include-filter type="annotation"

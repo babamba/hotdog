@@ -3,13 +3,6 @@
 
 <mapper namespace="post">
 	
-	<select id ="getById" parameterType="string" resultType="uservo">
-		<![CDATA[
-		select users_no as usersNo
-		  from users
-		 where email = #{email}	
-		]]>
-	</select> 
 	
 	
 	<insert id="insert" parameterType="postvo">
@@ -23,7 +16,7 @@
 	<select id="getPostList" parameterType="int" resultType="postvo">
 		<![CDATA[
 		select post_no as postNo, title, content, regdate as regDate, post_image as postImage, publish from post 
-		where post.users_no = #{usersNo};
+	 	where post.users_no = #{users_no} order by postNo desc
 		]]>
 	</select>
 	

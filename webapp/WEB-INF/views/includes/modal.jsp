@@ -205,8 +205,8 @@
 		                        <input id="inputPassword2" type="password" class="form-control">
 		               </div>
 		               
-		               <button type="button"  id="sendMailButton"class="btn btn-success btn-simple">Send Mail</button>
-		               <button type="button"  id="joinNextButton"class="btn btn-warning btn-simple" data-toggle="modal" data-target="#CodeCheckModal" >Next</button>
+		               <button type="button" id="sendMailButton" class="btn btn-success btn-simple">Send Mail</button>
+		               <button type="button" id="joinNextButton" class="btn btn-warning btn-simple" data-toggle="modal" data-target="#CodeCheckModal" >Next</button>
 					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
 					</div>
 			</div>
@@ -214,6 +214,46 @@
 		  </div>
 	   </div>
     </div>
+    
+    
+     <!-- easy join Modal -->
+    <div class="modal fade" id="easyjoin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	   <div class="modal-dialog">
+		  <div class="modal-content">
+            <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title">회원 가입</h4>
+			</div>
+			
+			<form action ="${pageContext.request.contextPath}/user/easyjoin">
+			<div id="joinform">
+	        
+	            	<div class="modal-body">	
+		               <div class="form-group label-floating">
+		                        <label class="control-label">email</label>
+		                        <input id="inputEmail" type="email" class="form-control" name="email">
+		               </div>
+		               <div class="form-group label-floating">
+		                        <label class="control-label">password</label>
+		                        <input id="inputPassword" type="password" class="form-control" name="pass_word">
+		               </div>
+		               <div class="form-group label-floating">
+		                        <label class="control-label">nickname</label>
+		                        <input id="inputnickname" type="text" class="form-control" name="nickname">
+		               </div>
+		               
+		               <input type="submit" class="btn btn-success btn-simple" value="submit">Enter</>
+					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</form>
+			
+		  </div>
+	   </div>
+    </div>
+    
     
     
     <!-- Code Check Modal -->
@@ -237,7 +277,7 @@
 		               </div>
 		               
 		               <button type="button" id="inputCodeCheck" class="btn btn-warning btn-simple" >Check</button>
-		               <input id="checkNext" type="submit"  class="btn btn-success btn-simple" value="next"/>
+		               <button id="checkNext" type="button"  class="btn btn-success btn-simple" data-toggle="modal" data-target="#nickCheckModal" >NEXT</button>
 					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
 					</div>
 				</form>
@@ -246,6 +286,38 @@
 		  </div>
 	   </div>
     </div>
+    
+    <!-- nickname Check Modal -->
+    <div class="modal fade" id="nickCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	   <div class="modal-dialog">
+		  <div class="modal-content">
+            <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title">NickName Check</h4>
+			</div>
+			
+			<div id="check">
+				<form>
+	            	<div class="modal-body">
+	            	
+		               <div class="form-group label-floating">
+		                        <label class="control-label">Input Your NickName..</label>
+		                        <input id="inputNickName" type="text" class="form-control" name="code">
+		               </div>
+		               
+		               <button type="button" id="inputNickCheck" class="btn btn-warning btn-simple" >Check</button>
+		               <button id="NickCheckNext" type="button"  class="btn btn-success btn-simple" data-toggle="modal" data-target="#nickCheck" >NEXT</button>
+					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+			
+		  </div>
+	   </div>
+    </div>
+    
 
     
     
