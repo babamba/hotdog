@@ -86,8 +86,10 @@ public class UserController {
 	public Object nickCheck(@RequestParam( value="nickname", required=true, defaultValue="" ) String nickname,
 							HttpServletRequest request){
 		
-		System.out.println("닉네임체크 ");
-		return JSONResult.success(userService.nicknameCheck(nickname)? "yes":"no");
+		System.out.println("닉네임체크 "+ nickname);
+		Boolean result = userService.nicknameCheck(nickname);
+		System.out.println(result);
+		return JSONResult.success(result? "yes":"no");
 	}
 	
 	

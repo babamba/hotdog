@@ -61,10 +61,8 @@ $(function(){
 	$("#joinNextButton").prop("disabled", true);
 	
 //		회원가입 폼    		
-
-
 	$("#inputNickCheck").click(function(){
-			nickname = $("#inputNickName").val();
+			nickname = $("#inputnickname").val();
 			
 			if($("#inputEmail").val()==""){
 				alert("이메일을 입력해주세요");
@@ -118,6 +116,7 @@ $(function(){
 
 
 	$("#sendMailButton").click(function() {
+		
 		
 		var formData = new FormData();
         email=$("#inputEmail").val();
