@@ -166,7 +166,7 @@ $(function(){
 		})
 		
 		alert("입력하신 이메일에 인증 코드가 발송되었습니다.");
-		$("#joinNextButton").prop("disabled",false);
+		$("#inputCodeCheck").prop("disabled",false);
 		
 		return true;
 	});
@@ -211,7 +211,7 @@ $(function(){
 				// 코드가 일치할 때
 			if(response.data=="yes"){
 				alert("코드가 일치합니다.");
-				$("#checkNext").prop("disabled",false);
+				$("#joinButton").prop("disabled",false);
 			}
 				if(response.data=="no"){
 					alert("코드가 일치하지 않습니다.")
