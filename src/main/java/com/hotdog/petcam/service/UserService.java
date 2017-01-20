@@ -70,6 +70,7 @@ public class UserService {
 	
 	// 브라우저에서 닉네임 체크 null이면 true not null이면 false
 	public boolean nicknameCheck(String nickname) {
+		System.out.println(nickname);
 		if (userDao.nicknameExist(nickname) == null) {
 			System.out.println("nicknameExist");
 			return true;

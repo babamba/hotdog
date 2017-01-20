@@ -17,7 +17,6 @@
 <title>Hot dog</title>
 <head>
 
-	
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/normalize.css">
@@ -172,16 +171,31 @@ $(function(){
 					return;
 				}
 			
-				// 코드가 일치할 때
+			// 코드가 일치할 때
 			if(response.data=="yes"){
 				alert("사용가능한 닉네임입니다.");
-				$("#checkNext").prop("disabled",false);
+				$("#NickCheckNext").prop("disabled",false);
 			}
 				if(response.data=="no"){
 					alert("이미 사용중인 닉네임입니다.")
 				}
 			}
 		})
+	})
+	
+	
+	$("#NickCheckNext").click(function(){
+		alert("가입완료");
+		$.ajax({
+			url:"${pageContext.request.contextPath}/user/join?nickname=" + nickname,
+			type:"get",
+			dataType:"json",
+			data:""
+			
+		})
+		
+		
+		
 	})
 		
 	

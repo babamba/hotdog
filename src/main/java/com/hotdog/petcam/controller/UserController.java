@@ -1,5 +1,7 @@
 package com.hotdog.petcam.controller;
 
+import java.net.URLEncoder;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -45,13 +47,21 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/join")
-	public String join(@ModelAttribute UserVo vo, Model model) {
-		int no = userService.join(vo);
-		vo.setUsers_no(no);
-		userService.insert(vo);
+	public String join(@RequestParam( value="nickname", required=true, defaultValue="" ) String nickname,@ModelAttribute UserVo userVo,
+			HttpServletRequest request){
+		System.out.println("join");
+		System.out.println(request.getSession().getAttribute("email"));
+		System.out.println(request.getSession().getAttribute("password"));
+		
+		userVo.setNickname(nickname);
+		userVo.setEmail((String)request.getSession().getAttribute("email"));
+		userVo.setPass_word((String)request.getSession().getAttribute("password"));
+		System.out.println(userVo);
+	
+		userService.join(userVo);
 		return "redirect:/";
 	}
-
+	
 	@Auth
 	@RequestMapping("/logout")
 	public String logout() {
@@ -69,11 +79,14 @@ public class UserController {
 		return JSONResult.success(userService.checkCode(inputCode,code)? "yes":"no");
 	}
 	
+	
+	//닉네임체크
 	@ResponseBody
 	@RequestMapping("/nickCheck")
 	public Object nickCheck(@RequestParam( value="nickname", required=true, defaultValue="" ) String nickname,
 							HttpServletRequest request){
 		
+		System.out.println("닉네임체크 ");
 		return JSONResult.success(userService.nicknameCheck(nickname)? "yes":"no");
 	}
 	

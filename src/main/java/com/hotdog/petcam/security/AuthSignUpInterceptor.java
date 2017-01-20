@@ -28,7 +28,6 @@ public class AuthSignUpInterceptor extends HandlerInterceptorAdapter{
 		String password = request.getParameter("password");
 		
 		
-		
 		userVo.setEmail(request.getParameter("email"));
 		userVo.setPass_word(request.getParameter("password"));
 		

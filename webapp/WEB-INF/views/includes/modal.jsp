@@ -205,8 +205,21 @@
 		                        <input id="inputPassword2" type="password" class="form-control">
 		               </div>
 		               
+		               <div class="form-group label-floating">
+		                        <label class="control-label">nickname</label>
+		                        <input id="inputnickname" type="text" class="form-control" name="nickname">
+		               </div>
+		               
+		               <div class="form-group label-floating">
+		                        <label class="control-label">Code</label>
+		                        <input id="inputCode" type="text" class="form-control" name="code">
+		               </div>
+		               
+		               
 		               <button type="button" id="sendMailButton" class="btn btn-success btn-simple">Send Mail</button>
 		               <button type="button" id="joinNextButton" class="btn btn-warning btn-simple" data-toggle="modal" data-target="#CodeCheckModal" >Next</button>
+					   <button type="button" id="inputCodeCheck" class="btn btn-warning btn-simple" >Code Check</button>
+					   <button type="button" id="inputNickCheck" class="btn btn-warning btn-simple" >Check</button>
 					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
 					</div>
 			</div>
@@ -239,12 +252,14 @@
 		                        <label class="control-label">password</label>
 		                        <input id="inputPassword" type="password" class="form-control" name="pass_word">
 		               </div>
+		               
 		               <div class="form-group label-floating">
 		                        <label class="control-label">nickname</label>
 		                        <input id="inputnickname" type="text" class="form-control" name="nickname">
 		               </div>
 		               
-		               <input type="submit" class="btn btn-success btn-simple" value="submit">Enter</>
+		               
+		               <input type="submit" class="btn btn-success btn-simple" value="submit">Enter
 					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
 					</div>
 				</div>
