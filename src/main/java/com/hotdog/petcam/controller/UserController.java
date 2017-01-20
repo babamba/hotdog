@@ -37,6 +37,10 @@ public class UserController {
 	}
 	
 	
+	public void gittest(){
+		
+	}
+	
 	@RequestMapping(value = "/easyjoin")
 	public String easyjoin(@ModelAttribute UserVo vo, Model model) {
 		int users_no = userService.join(vo);
