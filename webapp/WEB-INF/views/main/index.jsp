@@ -50,8 +50,8 @@
 <script>
 var email;
 var password;
-var code;
 var nickname;
+var code;
 
 $(function(){
 	
@@ -63,8 +63,11 @@ $(function(){
 		var formData = new FormData();
         email=$("#inputEmail").val();
         password=$("#inputPassword").val();
+        nickname=$("#inputnickname").val();
         formData.append("email",email);
-    	formData.append("password",password);	
+    	formData.append("password",password);
+    	formData.append("nickname",nickname);
+    	
 		
 		if($("#inputEmail").val()==""){
 			alert("이메일을 입력해주세요");
@@ -80,8 +83,15 @@ $(function(){
 			alert("입력한 비밀번호가 다릅니다.");
 			$("#inputPassword2").focus();
 			return false;
-			
 		}
+		if($("#inputnickname").val()==""){
+			alert("닉네임을 입력해주세요");
+			$("#inputnickname").focus();
+			return false;
+		}
+		
+
+		
 		// 배열에 TempUser 정보 넣어서 JSON 으로 던지기         {"data":arr}
 		
 //			var arr=[ $("#inputEmail").val() ,$("#inputPassword").val() ];
