@@ -56,8 +56,67 @@ var code;
 $(function(){
 	
 	$("#joinNextButton").prop("disabled",true);
+	$("#sendMailButton").prop("disabled", true);
+	$("#inputCodeCheck").prop("disabled", true);
+	$("#joinNextButton").prop("disabled", true);
 	
 //		회원가입 폼    		
+
+
+	$("#inputNickCheck").click(function(){
+			nickname = $("#inputNickName").val();
+			
+			if($("#inputEmail").val()==""){
+				alert("이메일을 입력해주세요");
+				$("#inputEmail").focus();
+				return false;
+			}
+			if($("#inputPassword").val()==""){
+				alert("패스워드를 입력해주세요");
+				$("#inputPassword").focus();
+				return false;
+			}
+			if($("#inputPassword").val()!=$("#inputPassword2").val()){
+				alert("입력한 비밀번호가 다릅니다.");
+				$("#inputPassword2").focus();
+				return false;
+			}
+			if($("#inputnickname").val()==""){
+				alert("닉네임을 입력해주세요");
+				$("#inputnickname").focus();
+				return false;
+			}
+			
+			$.ajax({
+				url:"${pageContext.request.contextPath}/user/nickCheck?nickname=" + nickname,
+				type:"get",
+				dataType:"json",
+				data:"",
+				success: function(response){
+					
+					// 통신에러
+					if( response.result == "fail" ) {
+						console.log( response.message );
+						return;
+					}
+				
+				// 코드가 일치할 때
+				if(response.data=="yes"){
+					alert("사용가능한 닉네임입니다.");
+					$("#sendMailButton").prop("disabled",false);
+				}
+					if(response.data=="no"){
+						alert("이미 사용중인 닉네임입니다.")
+					}
+				}
+			})
+		})
+
+
+
+
+
+
 	$("#sendMailButton").click(function() {
 		
 		var formData = new FormData();
@@ -90,40 +149,9 @@ $(function(){
 			return false;
 		}
 		
-		$("#sendMailButton").prop("disabled", true);
 		
-		$("#inputNickCheck").click(function(){
-			nickname = $("#inputNickName").val();
-			
-			if(code==""){
-				syso
-				return;
-			}
-			
-			$.ajax({
-				url:"${pageContext.request.contextPath}/user/nickCheck?nickname=" + nickname,
-				type:"get",
-				dataType:"json",
-				data:"",
-				success: function(response){
-					
-					// 통신에러
-					if( response.result == "fail" ) {
-						console.log( response.message );
-						return;
-					}
-				
-				// 코드가 일치할 때
-				if(response.data=="yes"){
-					alert("사용가능한 닉네임입니다.");
-					$("#sendMailButton").prop("disabled",false);
-				}
-					if(response.data=="no"){
-						alert("이미 사용중인 닉네임입니다.")
-					}
-				}
-			})
-		})
+		
+		
 		
 
 		// 배열에 TempUser 정보 넣어서 JSON 으로 던지기         {"data":arr}
