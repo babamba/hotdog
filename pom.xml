@@ -148,6 +148,9 @@
 					</plugin>
 				</plugins>
 			</build>
+			
+			
+			
 			<dependencies>
 				<!-- Servlet -->
 				<dependency>
@@ -194,6 +197,13 @@
 					<password>tomcat</password>
 				</configuration>
 			</plugin>
+		
 		</plugins>
+			<testResources>
+	     	  <testResource>
+	           <directory>resource/mybatis/configuration.xml</directory>
+	       </testResource>
+  		</testResources>
+		
 	</build>
 </project>

@@ -192,26 +192,6 @@ $(function(){
 			}
 		})
 	})
-	
-	
-	
-	
-	$("#NickCheckNext").click(function(){
-		alert("가입완료");
-		$.ajax({
-			url:"${pageContext.request.contextPath}/user/join?nickname=" + nickname,
-			type:"get",
-			dataType:"json",
-			data:""
-			
-		})
-		
-		
-		
-	})
-		
-	
-
 })
 
 

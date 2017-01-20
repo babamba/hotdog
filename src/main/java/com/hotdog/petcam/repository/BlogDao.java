@@ -12,7 +12,6 @@ public class BlogDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	
 	//유저넘버로 블로그 정보 가져오기.
 	public BlogVo get(int no){
 		return sqlSession.selectOne("blog.get", no);
