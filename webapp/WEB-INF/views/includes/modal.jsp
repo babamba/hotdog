@@ -215,10 +215,9 @@
 		                        <input id="inputCode" type="text" class="form-control" name="code">
 		               </div>
 		               
-		               
+		               <button type="button" id="inputNickCheck" class="btn btn-warning btn-simple" >Nickname Check</button>
 		               <button type="button" id="sendMailButton" class="btn btn-success btn-simple">Send Mail</button>		              
 					   <button type="button" id="inputCodeCheck" class="btn btn-warning btn-simple" >Code Check</button>
-					   <button type="button" id="inputNickCheck" class="btn btn-warning btn-simple" >Check</button>
 					   <button type="button" id="joinNextButton" class="btn btn-warning btn-simple" data-toggle="modal" data-target="#CodeCheckModal" >Join</button>
 					   <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
 					</div>

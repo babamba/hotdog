@@ -26,10 +26,12 @@ public class AuthSignUpInterceptor extends HandlerInterceptorAdapter{
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String nickname = request.getParameter("nickname");
 		
 		
 		userVo.setEmail(request.getParameter("email"));
 		userVo.setPass_word(request.getParameter("password"));
+		userVo.setNickname(request.getParameter("nickname"));
 		
 		System.out.println(userVo);
 		

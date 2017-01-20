@@ -90,8 +90,42 @@ $(function(){
 			return false;
 		}
 		
-
+		$("#sendMailButton").prop("disabled", true);
 		
+		$("#inputNickCheck").click(function(){
+			nickname = $("#inputNickName").val();
+			
+			if(code==""){
+				syso
+				return;
+			}
+			
+			$.ajax({
+				url:"${pageContext.request.contextPath}/user/nickCheck?nickname=" + nickname,
+				type:"get",
+				dataType:"json",
+				data:"",
+				success: function(response){
+					
+					// 통신에러
+					if( response.result == "fail" ) {
+						console.log( response.message );
+						return;
+					}
+				
+				// 코드가 일치할 때
+				if(response.data=="yes"){
+					alert("사용가능한 닉네임입니다.");
+					$("#sendMailButton").prop("disabled",false);
+				}
+					if(response.data=="no"){
+						alert("이미 사용중인 닉네임입니다.")
+					}
+				}
+			})
+		})
+		
+
 		// 배열에 TempUser 정보 넣어서 JSON 으로 던지기         {"data":arr}
 		
 //			var arr=[ $("#inputEmail").val() ,$("#inputPassword").val() ];
@@ -159,39 +193,7 @@ $(function(){
 		})
 	})
 	
-	$("#NickCheckNext").prop("disabled", true);
 	
-	$("#inputNickCheck").click(function(){
-		nickname = $("#inputNickName").val();
-		
-		if(code==""){
-			return;
-		}
-		
-		$.ajax({
-			url:"${pageContext.request.contextPath}/user/nickCheck?nickname=" + nickname,
-			type:"get",
-			dataType:"json",
-			data:"",
-			success: function(response){
-				
-				// 통신에러
-				if( response.result == "fail" ) {
-					console.log( response.message );
-					return;
-				}
-			
-			// 코드가 일치할 때
-			if(response.data=="yes"){
-				alert("사용가능한 닉네임입니다.");
-				$("#NickCheckNext").prop("disabled",false);
-			}
-				if(response.data=="no"){
-					alert("이미 사용중인 닉네임입니다.")
-				}
-			}
-		})
-	})
 	
 	
 	$("#NickCheckNext").click(function(){

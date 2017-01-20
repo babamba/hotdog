@@ -5,14 +5,14 @@
 	<insert id="insert" parameterType="blogvo">
 		<![CDATA[
 			insert into blog
-			VALUES(#{usersNo}, #{title}, #{logoImage})
+			VALUES(#{users_no}, #{title}, #{logo_image})
 		]]>
 	</insert> 
 
 	<update id="update" parameterType="blogvo">
 		<![CDATA[
 		 UPDATE BLOG 
-		 	SET TITLE = #{title}, logo_image = #{logo} where users_no = #{no}
+		 	SET TITLE = #{title}, logo_image = #{logo_image} where users_no = #{users_no}
 		]]>
 	</update> 
 	
